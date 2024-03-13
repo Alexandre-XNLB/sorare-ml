@@ -1,0 +1,13 @@
+data
+wandb
+model_save
+*.csv
+.vscode
+docs
+forecasts
+/models
+/forecasts
+/docs
+/.vscode
+/playsharper
+/.env
