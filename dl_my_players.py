@@ -76,6 +76,7 @@ async def fetch_my_players():
                     nodes {{
                         player {{
                             slug
+                            displayName
                             position
                             so5Scores(last:15) {{
                                 score

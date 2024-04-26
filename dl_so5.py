@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-league = "ligue-1-fr"
+league = "premier-league"
 with open("data/" + league + ".json", "r") as file:
     league_data = json.load(file)
 
@@ -77,6 +77,7 @@ async def fetch_club_players(slug):
                     activePlayers {{
                         nodes {{
                             slug
+                            displayName
                             position
                             so5Scores(last:15) {{
                                 score
