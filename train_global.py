@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 import datetime
+from autots import AutoTS
 
 start_time = datetime.datetime.now()
 data_main_folder = "./data/"
@@ -56,8 +57,6 @@ for league in os.listdir(data_main_folder):
 # Concatenate all DataFrames in the list into a single DataFrame
 final_df = pd.concat(dfs, ignore_index=True)
 
-from autots import AutoTS
-
 model = AutoTS(
     forecast_length=1,
     frequency="D",
@@ -67,13 +66,14 @@ model = AutoTS(
     no_negatives=True,
     constraint=2.0,
     introduce_na=False,
-    model_list=['ARCH', 'ARDL', 'ARIMA', 'AverageValueNaive', 'ConstantNaive',
-       'DatepartRegression', 'ETS', 'FBProphet', 'GLM', 'GLS',
-       'LastValueNaive', 'MetricMotif', 'MultivariateMotif',
-       'MultivariateRegression', 'NVAR', 'SeasonalNaive',
-       'SeasonalityMotif', 'SectionalMotif', 'Theta', 'UnivariateMotif',
-       'UnivariateRegression', 'UnobservedComponents', 'VECM',
-       'WindowRegression']
+    # model_list=['ARCH', 'ARDL', 'ARIMA', 'AverageValueNaive', 'ConstantNaive',
+    #    'DatepartRegression', 'ETS', 'FBProphet', 'GLM', 'GLS',
+    #    'LastValueNaive', 'MetricMotif', 'MultivariateMotif',
+    #    'MultivariateRegression', 'NVAR', 'SeasonalNaive',
+    #    'SeasonalityMotif', 'SectionalMotif', 'Theta', 'UnivariateMotif',
+    #    'UnivariateRegression', 'UnobservedComponents', 'VECM',
+    #    'WindowRegression']
+    model_list=["NeuralForecast"]
 )
 
 model = model.fit(
