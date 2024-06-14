@@ -66,14 +66,14 @@ model = AutoTS(
     no_negatives=True,
     constraint=2.0,
     introduce_na=False,
-    # model_list=['ARCH', 'ARDL', 'ARIMA', 'AverageValueNaive', 'ConstantNaive',
-    #    'DatepartRegression', 'ETS', 'FBProphet', 'GLM', 'GLS',
-    #    'LastValueNaive', 'MetricMotif', 'MultivariateMotif',
-    #    'MultivariateRegression', 'NVAR', 'SeasonalNaive',
-    #    'SeasonalityMotif', 'SectionalMotif', 'Theta', 'UnivariateMotif',
-    #    'UnivariateRegression', 'UnobservedComponents', 'VECM',
-    #    'WindowRegression']
-    model_list=["NeuralForecast"]
+    model_list=['ARCH', 'ARDL', 'ARIMA', 'AverageValueNaive', 'ConstantNaive',
+       'DatepartRegression', 'ETS', 'FBProphet', 'GLM', 'GLS',
+       'LastValueNaive', 'MetricMotif', 'MultivariateMotif',
+       'MultivariateRegression', 'NVAR', 'SeasonalNaive',
+       'SeasonalityMotif', 'SectionalMotif', 'Theta', 'UnivariateMotif',
+       'UnivariateRegression', 'UnobservedComponents', 'VECM',
+       'WindowRegression']
+    # model_list=["NeuralForecast"]
 )
 
 model = model.fit(
